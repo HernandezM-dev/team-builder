@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import Form from './Components/Form'
 import logo from './logo.svg';
 import styled from 'styled-components'
+import Member from './Components/Member'
 import './App.css';
 
 const initialTeamMemberList = [
@@ -44,7 +45,6 @@ const updateForm = (inputName, inputValue) => {
 }
 
 const submitForm = () => {
-  debugger
   const newMember = {
     firstname: formValues.firstname.trim(),
     lastname: formValues.lastname.trim(),
@@ -54,7 +54,6 @@ const submitForm = () => {
   if(!newMember.firstname || !newMember.lastname ||!newMember.email || !newMember.role) return
   
   setTeamMember([newMember,...teamMembers]);
-  console.log(teamMembers)
   setFormValues(initialFormValue);
 
 }
@@ -74,7 +73,7 @@ const submitForm = () => {
       {
            teamMembers.map(member => {
             return (
-              <p>{member.firstname}</p>
+              <Member info={member}/>
             )
           })
 

@@ -1,9 +1,16 @@
 import React from 'react'
 import styled from 'styled-components'
 
+const FullForm = styled.form`
+display: flex;
+flex-direction: column;
+
+`
 const FormDiv = styled.div`
     display: flex;
-    flex-direction: column;
+    width: 50%;
+    flex-wrap: wrap;
+    /* flex-direction: column; */
     /* justify-content: center; */
     align-items: center;
     
@@ -29,7 +36,7 @@ export default function Form(props){
     }
 
     return (
-        <form className='form container' onSubmit={onSubmit}>
+        <FullForm className='form container' onSubmit={onSubmit}>
             <h2>Add New Team Members</h2>
 
             <FormDiv className='form-inputs'>
@@ -89,6 +96,6 @@ export default function Form(props){
             </FormDiv>
 
 
-        </form>
+        </FullForm>
     )
 }
